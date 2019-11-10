@@ -1,3 +1,12 @@
+# About the Project:
+This is a website for hosting the work we have done for our envisioned bedroom-mobile.
+
+Project: 
+CS361_400_F19 Group 13
+
+Members:
+Greggory Bechtel, Nicholas Stapler, Amy Suzuki, Phillip Wellheuser, Chung Weng
+
 # Launch
 Launch is a responsive html5 bootstrap free crowdfunding template, which is focused on promoting a websites funding campaign.
 
