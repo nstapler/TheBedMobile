@@ -1,37 +1,39 @@
-## Welcome to GitHub Pages
+# Launch
+Launch is a responsive html5 bootstrap free crowdfunding template, which is focused on promoting a websites funding campaign.
 
-You can use the [editor on GitHub](https://github.com/nstapler/TheBedMobile/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+With Launch You'll be able to take full control of your crowdfunding campaign and control the process from start to finish, this is without having to rely on third party services which require fees which are usually deducted from your total campaign.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Author
 
-### Markdown
+This template is made by Justin at [Audain Designs.](http://themes.audaindesigns.com)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+#Licensing
 
-```markdown
-Syntax highlighted code block
+All non commercial themes and templates found on Audain Designs are 100% free and covered under the [Creative Commons Attribution 3.0 License (CC BY 3.0)](http://creativecommons.org/licenses/by/3.0/)
 
-# Header 1
-## Header 2
-### Header 3
+**Other Options**
 
-- Bulleted
-- List
+If you’d like to use this bootstrap template without the attribution link, you can choose to purchase the commercial license: [Purchase Launch](http://bit.ly/2kAgb8K)
 
-1. Numbered
-2. List
+#Features
 
-**Bold** and _Italic_ and `Code` text
+- Landing Page Template
+- Easy to Customize
+- Bootstrap
+- Google Fonts
+- FontAwesome Icons
 
-[Link](url) and ![Image](src)
-```
+#Credits
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+All Images are for demo purposes only and not included in the template, sources are included & all other sources and credits are included in the documentation.
 
-### Jekyll Themes
+- UI Faces
+- Google Web Fonts
+- FontAwesome Icon
+- jQuery
+- Bootstrap
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/nstapler/TheBedMobile/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+---
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+10 Feb 17
+- Readme Updated

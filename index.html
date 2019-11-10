@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="unititled">
+	<meta name="keywords" content="HTML5 Crowdfunding Profile Template">
+	<meta name="author" content="Audain Designs">
+	<link rel="shortcut icon" href="favicon.ico">
+	<title>The Bedroom-mobile Application</title>
+
+	<!-- Gobal CSS -->
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Template CSS -->
+	<link href="assets/css/style.css" rel="stylesheet">
+
+	<!--Fonts-->
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+	<style>
+	img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+	</style>
+</head>
+
+<body>
+	<!--header-->
+	<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="goal-summary pull-left">
+					<div class="">
+						<h1>The Bedroom-mobile Application</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!--/header-->
+	<!--main content-->
+	<div class="main-content">
+		<div class="container">
+			<div class="row">
+				<div class="content col-md-12 col-sm-12 col-xs-12">
+					<div class="section-block">
+						<div class="funding-meta">
+							<h1>Welcome to the Bedroom-mobile Project Page (CS361_400_F19 Group 13)</h1>
+						</div>
+						<!--tabs-->
+						<div class="section-block">
+							<div class="section-tabs">
+								<ul class="nav nav-tabs" role="tablist">
+									<li role="presentation" class="active"><a href="#HomeWork_Report_4"
+											aria-controls="HomeWork_Report_4" role="tab" data-toggle="tab">HomeWork
+											Report 4</a></li>
+									<li role="presentation"><a href="#aboutPage" aria-controls="aboutPage" role="tab"
+											data-toggle="tab">About</a></li>
+								</ul>
+							</div>
+						</div>
+						<!--/tabs-->
+						<!--tab panes-->
+						<div class="section-block">
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane active" id="HomeWork_Report_4">
+									<div class="update-information">
+										<h1 class="section-title">Report 4: ‘Bedroom-mobile’ : Requirements</h1>
+										<div class="update-post">
+											<h2 class="section-title">UML Class Diagram</h2>
+											<div>
+													<img src="/assets/img/UMLClass.png">
+											</div>
+											
+										</div>
+										<div class="update-post">
+											<h2 class="section-title">Packaging</h2>
+											<img src="/assets/img/Packages.png">
+											<h3>Coupling</h3>
+											<h4>Data Coupling</h4>
+											<ul>
+													<li>The AutoDriving System provides unstructured data (images) or location information to the BedroomMobileManger. </li>
+													<li>The BedroomMobile Manager provides unstructured data for UI to display.</li>
+													<li>The BedroomMobileDockManager provides unstructured data for Docking Manager UI to display.</li>
+													<li>The UI provides unstructured data to the BedroomMobile Manager in the form of user inputs.</li>
+													<li>The UI provides unstructured data to the BedroomMobileDockManager in the form of user inputs.</li>
+													</ul>
+											<h4>Stamp Coupling</h4>
+											<ul>
+													<li>The BedroomMobileUtilities provides structured data to the BedroomMobileManager to inform the state of its utilities.</li>
+													<li>The BedroomMobileManager provides structured data to the AutoDriving System.</li>
+													<li>The Central Server provides structured data to the BedroomMobileUI in the form list of available Docking Terminals.</li>
+													<li>The BedroomMobileDockManager provides structured data to the Central server to inform the server of its schedule. </li>
+													<li>The User Class provides structured data to the BedroomMobileUI to use in authentication and loading any presaved travel history or preferences. </li>
+													<li>Trip reads structured data from Notification Preferences and Travel Preferences</li>
+													</ul>
+											<h4>Content Coupling</h4>
+											<ul>
+													<li>The Central server modifies the BedroomMobileDockManager&rsquo;s schedule based on input from the BedroomMobileUI.</li>
+													<li>The Trip modifies Notification Preferences and Travel Preferences according to input form the BedroomMobileManager. </li>
+													</ul>
+											<h4>Control Coupling</h4>
+											<ul>
+													<li>The BedroomMobileUtilities calls on the BedroomMobileDockUtilities to begin loading and unloading procedures. </li>
+													<li>BedroomMobileManager calls on Trip to start and track trips in progress. </li>
+													</ul>
+											<h3>Cohesion</h3>
+											<h4>Functional Cohesion</h4>
+											<ul>
+													<li>User Interface provides user interaction functionality.</li>
+													<li>BedroomMobileManager manages the state of bedroom-mobiles including its utilities and travel status. </li>
+													<li>Central Server summaries information from all BedroomMobileDocks to allow the BedroomMobileUI to locate available Docks with queries and inform BedroomMobileDocks with reservation requests. </li>
+													<li>BedroomMobileDockSchedule summarizes the schedule information for a single Docking Terminal. </li>
+													<li>BedroomMobileDock Utilities allows control over a Docking Terminals utility status and connections for docking and undocking. </li>
+													<li>Trip Manager holds all information necessary to track a User&rsquo;s trip including destination and preferences. </li>
+													</ul>
+										</div>
+										<div class="update-post">
+											<h2 class="section-title">Design Assessment</h2>
+											<p>Most of our design would support iterative development, and a small part of our design which is user interaction functionality can support incremental development. </p>
+<p> According to the requirements, we have bedroom-mobiles and docking terminals, and each of these two groups are managed by its own manager. The reason why these parts of design support iterative development is that none of them can be performed independently. Bedroom-mobiles needs docking terminals to undock and dock, and docking terminals needs bedroom-mobiles to fill their space in order for docking process to complete. After docking process has been established, then we can add additional services such as trip planning and rerouting for bedroom-mobile manager, and docking terminals registering and searching system for docking manager. </p>
+<p> And for user interaction functionality, we can use incremental development to design our UI first using fake data which will be replaced with true data as docking system completes, and then give UI prototype to our customer to see if it fits what he wants. Then, we gradually change every part of UI until our customer or user are satisfied. </p>
+										</div>
+										<div class="update-post">
+											<h2 class="section-title">Useful Design Patterns</h2>
+											<h3>Builder</h3>
+											<p>A builder pattern will be useful for our system in for constructing Trip objects. Which combine the name of the trip, trip origin and destination terminals, a list of stops to make, a depart time and an arrival time. All of this information will be put in by the user, drawn from the central server, or determined by the Auto-Driving system, then stored as a single built object until it is needed. </p>
+											<h3>Facade</h3>
+											<p>The Bedroom Mobile Manager could make use of a facade design pattern for all of its interactions with the Auto-Driving system. The Auto-Driving system is an already constructed application which is used in normal vehicles like personal automobiles for automated transportation, but the Bedroom-mobile uses the features of this system as well as additional features of its own to simplify the instructions which would otherwise need to be entered into the Auto-Driving system by the user into a more convenient format for the user. </p>
+											<h3>Momento</h3>
+											<p>A momento design pattern would be useful in this system for long term storage of planned trips in a less volatile form of memory. Trip objects can be converted into text files through the momento pattern, and then converted back as the time the trip is scheduled for approaches. </p>
+											<h3>Interpreter</h3>
+											<p>In order to use the Auto-Driving system, an interpreter may be necessary, depending on what language the Bedroom-Mobile Application is programmed in and the available features of the Auto-Driving system API. </p>
+											<h3>Observer</h3>
+											<p>The Bedroom-mobile application may use an observer design pattern for monitoring the time as well as active trips being executed by the Auto-Driving system so that it can update the user appropriately and travel on an appropriate schedule. </p>
+											<h3>Composite</h3>
+											<p>Depending on the complexity of the hardware involved in managing the utilities of Bedroom-mobiles and Docking Terminals, the Utilities object, may benefit from being designed as a composite object. So that all utility information for the respective Bedroom-mobile and Docking Terminals can be contained in one place. </p>
+										</div>
+										<div class="update-post">
+											<h2 class="section-title">Use Case Sequence Diagram</h2>
+											<img src="">
+										</div>
+										<div class="update-post">
+											<h2 class="section-title">Interfaces</h2>
+											<h3>Bedroom-mobile</h3>
+											<ul>
+													<li>Get Status of Utilities from bedroom-mobile</li>
+													<ul>
+															<li>Input: Bedroom-mobile ID and user credentials</li>
+															<li>Output: Current status of bedroom-mobile&rsquo;s utilities</li>
+															</ul>
+													</ul>
+													
+											<h3>Bedroom-mobile UI</h3>
+											<ul>
+													<li>Plan Trips</li>
+													<ul>
+															<li>Input: Desired schedule, and destination</li>
+															<li>Output: GUI display of mapped route including necessary stops and departure/arrival times, Trip object with all relevant data</li>
+															</ul>
+													</ul>
+													
+													<ul>
+													<li>View registered docking terminals</li>
+													<ul>
+															<li>Input: User credentials, elect to view</li>
+															<li>Output: GUI list of terminals the user is registered as a user for</li>
+															</ul>
+													</ul>
+													
+													<ul>
+													<li>View administered docking terminals</li>
+													<ul>
+															<li>Input: User credentials, elect to view</li>
+															<li>Output: GUI list of terminals for which the current user is registered as the administrator of </li>
+															</ul>
+													</ul>
+													
+													<ul>
+													<li>Noise aversion route alterations</li>
+													<ul>
+															<li>Input: User elects to accept a suggested route change based on potential noise</li>
+															<li>Output: Travel route updates per suggestion</li>
+															</ul>
+													</ul>
+													
+													<ul>
+													<li>Search for rentable terminals</li>
+													<ul>
+															<li>Input: Dates, location</li>
+															<li>Output: List of available docks and prices fitting criteria</li>
+															</ul>
+													</ul>
+													
+													<ul>
+													<li>View Current Utility Status</li>
+													<ul>
+															<li>Input: User credentials, elect to view</li>
+															<li>Output: GUI representation of status of utilities</li>
+															</ul>
+													</ul>
+													
+													<ul>
+													<li>Check Utility Needs</li>
+													<ul>
+															<li>Input: Required utility levels to make a trip</li>
+															<li>Output: Boolean representing whether enough resources are available for trip</li>
+															</ul>
+													</ul>
+													
+
+											<h3>Docking Terminal</h3>
+											<ul>
+													<li>Get status of utilities from docking terminal</li>
+													<ul>
+															<li>Input: User credentials</li>
+															<li>Output: Current status of docking terminal utilities</li>
+															</ul>
+													</ul>
+													
+
+											<h3>Bedroom-mobile Dock Manager</h3>
+											<ul>
+													<li>View Utility Status</li>
+													<ul>
+															<li>Input: User credentials, specified dock</li>
+															<li>Output: GUI representation of status of utilities</li>
+															</ul>
+															<ul>
+													</ul>
+													
+													<li>Confirm registration of new users</li>
+													<ul>
+															<li>Input: request to use docking terminal, confirmation by admin</li>
+															<li>Output: authorize central server to add requesting user to user list for docking terminal</li>
+															</ul>
+													</ul>
+													
+
+											<h3>Central Server</h3>
+											<ul>
+													<li>Find rental locations</li>
+													<ul>
+															<li>Input: Dates, location</li>
+															<li>Output: List of available docks and prices fitting criteria</li>
+															</ul>
+													</ul>
+													
+													<ul>
+													<li>Update registered Users per docking terminal</li>
+													<ul>
+															<li>Input: Docking terminal, administrator credentials, bedroom-mobile user</li>
+															<li>Output: User is added to terminal&rsquo;s list of registered users</li>
+															</ul>
+													</ul>
+													
+
+
+											<h3>Auto-Driving System</h3>
+											<ul>
+													<li>Calculate route to destination</li>
+													<ul>
+															<li>Input: Desired schedule, and destination</li>
+															<li>Output: Mapped route including necessary stops and departure/arrival times</li>
+															</ul>
+													</ul>
+													
+													<ul>
+													<li>Add stop to route</li>
+													<ul>
+															<li>Input: Additional location to stop at</li>
+															<li>Output: Stop is added to auto-driving system&rsquo;s current route</li>
+															</ul>
+													</ul>
+													
+													<ul>
+													<li>Auto-Driving from point to point</li>
+													<ul>
+															<li>Input: Destination, stops, and confirmation to begin travel</li>
+															<li>Output: Auto-Driving system drives bedroom-mobile to destination</li>
+															</ul>
+													</ul>
+													
+										</div>
+										<div class="update-post">
+											<h2 class="section-title">Exceptions</h2>
+											<h3>User Input Exception</h3>
+											<p>
+													These exceptions occur when the user’s actions or input data are out of system boundaries. This type of exception could occur with any property of the bedroom-mobile that is physical or can be accessed by the user, such as the Bedroom-mobile Manager and Docking Manager applications or the interior of the bedroom mobile. Some examples of this type of exception might include a user requesting a registered docking terminal using a dock ID that does not exist or if the user forces open the door of the bedroom-mobile before the bedroom-mobile’s status is flagged as parked/not-in-motion. Exceptions of this type can be difficult to handle since users can act unpredictably so they must be handled with extra attention to user accessible features. This means robust internal user input handling around things like the checking of the user input the Docking Manager and the bedroom-mobile manager’s access to docking terminals, utilities, the route, and bedroom-mobile furniture.
+											</p>
+											<h3>Mechanical Exceptions</h3>
+											<p>Some of the less common exceptions relate to the different digital sensors and components that enable the bedroom-mobile to provide an autonomous experience. There are sensors within the utilities, the bedroom-mobile vehicle, and extendable furniture that relate component status and updates to the bedroom-mobile manager. Each sensor has a chance of malfunctioning and providing the bedroom-mobile with inaccurate data that would contribute to unexpected trip outcomes or user inconvenience. Mechanical exceptions can be prevented through notifying the user of recommended bedroom-mobile inspections dates, checking component status at trip planning and again before the auto-driving system is engaged to ensure accuracy of route preconditions.</p>
+											<h3>External Feature Exceptions</h3>
+											<p>External features refers to the entities which are utilized but not fully controlled by the bedroom-mobile like the Central Docking Terminal Server and the Auto-Driving system. These systems rely on their own resources and software for support and error detection. We plan to handle these exceptions by having backup routines in place. For example, the bedroom mobile will store the most current route locally for when the GPS connection of the Auto-driving system is unavailable and allow direct connection to docking terminals within a wifi-range when connection to the central server is disrupted.</p>
+										</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="aboutPage">
+									<div class="update-information">
+										<h1 class="section-title">About the Project</h1>
+										<!--update items-->
+										<div class="update-post">
+											<h4 class="update-title">The Team(CS361_400_F19 Group 13)</h4>
+											<!-- <span class="update-date">Posted 2 days ago</span> -->
+											<p>The Team is composed of 5 members, each bringing a diverse skillset to
+												the table:
+												<br>Greggory Bechtel,
+												<br>Nicholas Stapler,
+												<br>Amy Suzuki,
+												<br>Phillip Wellheuser,
+												<br>Chung Weng
+											</p>
+										</div>
+										<div class="update-post">
+											<h4 class="update-title">Resources Used</h4>
+											<p>This website is being hosted online for free using gitpages and makes use
+												of a free html website template from this link:<br>
+												<br>
+												<a
+													href="https://www.free-css.com/free-css-templates/page245/launch-v1.0">
+													<h3>Launch V1.0</h3>
+												</a>
+											</p>
+										</div>
+										<!-- <div class="update-post">
+										<h4 class="update-title">Designs have now been finalized</h4>
+										<span class="update-date">Posted 17 days ago</span>
+										<p>Suspendisse luctus at massa sit amet bibendum. Cras commodo congue urna, vel dictum velit bibendum eget. Vestibulum quis risus euismod, facilisis lorem nec, dapibus leo. Quisque sodales eget dolor iaculis dapibus. Vivamus sit amet lacus ipsum. Nullam varius lobortis neque, et efficitur lacus. Quisque dictum tellus nec mi luctus imperdiet. Morbi vel aliquet velit, accumsan dapibus urna. Cras ligula orci, suscipit id eros non, rhoncus efficitur nisi.</p>
+									</div> -->
+										<!--/update items-->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<!--This template has been created under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using this template in your own project, thank you.-->
+					<span class="copyright">Created by the<a href="http://themes.audaindesigns.com"
+							target="_blank">Audain Designs</a> for free use</span>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Global jQuery -->
+		<script type="text/javascript" src="assets/js/jquery-1.12.3.min.js"></script>
+		<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+
+		<!-- Template JS -->
+		<script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+
+</html>
