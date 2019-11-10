@@ -1,5 +1,6 @@
 # About the Project:
 This is a website for hosting the work we have done for our envisioned bedroom-mobile.
+
 Members:
 Greggory Bechtel, Nicholas Stapler, Amy Suzuki, Phillip Wellheuser, Chung Weng
 
